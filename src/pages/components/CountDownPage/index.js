@@ -1,4 +1,4 @@
-import { Card, Container, Input } from 'ui'
+import { Button, Card, Container, Input } from 'ui'
 
 import React from 'react'
 
@@ -8,6 +8,7 @@ export const CountDownPage = () => (
 		<Card>
 			<h1>hhhh</h1>
 			<Input placeholder="AAA" />
+			<Button>saddsadsa</Button>
 		</Card>
 	</Container>
 )

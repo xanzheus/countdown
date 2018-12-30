@@ -6,7 +6,8 @@ export const Base = createGlobalStyle`
 		background: #37474F;
 		font-size: 18px;
 	}
-	input {
+	input, button {
 		font-family: 'Sarabun', sans-serif;
+		font-size: 18px;
 	}
 ` 
