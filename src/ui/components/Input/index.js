@@ -9,6 +9,7 @@ export const Input = styled(({ color, ...rest }) => <input {...rest} />)`
 	border-radius: 360px;
 	padding: 8px 16px;
 	color: white;
+	width: 100%;
 	&::placeholder {
 		color: #F7F7F7;
 	}
