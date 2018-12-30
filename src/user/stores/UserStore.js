@@ -1,7 +1,7 @@
 import { action, decorate, observable } from 'mobx'
 
 class Store {
-	color = '#FF7F7F'
+	color = '#f44336'
 	name = ''
 	pic = ''
 

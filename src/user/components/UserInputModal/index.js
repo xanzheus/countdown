@@ -3,6 +3,7 @@ import { Half, InputContainer, Row } from './styled'
 import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
 
+import { ColorPicker } from 'color-pick'
 import { Modal } from 'modal'
 import { compose } from 'recompose'
 
@@ -16,12 +17,18 @@ export const UserInputModal = compose(
 	state = {
 		name: '',
 		pic: '',
-		color: '',
+		color: '#f44336',
 	}
 
 	onInputChange = ({ target: { value, name }}) => {
 		this.setState({
 			[name]: value,
+		})
+	}
+
+	onSelectColor = color => {
+		this.setState({
+			color: color.hex,
 		})
 	}
 
@@ -44,7 +51,7 @@ export const UserInputModal = compose(
 							<Input name="pic" placeholder="Profile Pic" value={pic} onChange={this.onInputChange} />
 						</Half>
 						<Half isRight>
-							sf
+							<ColorPicker onSelectColor={this.onSelectColor} color={color} />
 						</Half>
 					</Row>
 					<Row isCenter>

@@ -6,6 +6,7 @@ class PageStore {
 
 	constructor() {
 		this.stores.userInput = new ModalStore(true)
+		this.stores.colorPicker = new ModalStore()
 		this.stores.user = new UserStore()
 	}
 }
