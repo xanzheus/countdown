@@ -10,11 +10,9 @@ export const Modal = compose(
 	})),
 	observer,
 )(
-	({ isOpen }) => isOpen && (
+	({ isOpen, ...rest }) => isOpen && (
 		<Overlay>
-			<BaseModal>
-				aaa
-			</BaseModal>
+			<BaseModal {...rest} />
 		</Overlay>
 	)
 )

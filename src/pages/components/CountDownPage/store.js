@@ -1,10 +1,13 @@
 import { ModalStore } from 'modal'
+import { UserStore } from 'user'
 
 class PageStore {
 	stores = {}
 
 	constructor() {
-		this.stores.sampleModal = new ModalStore()
+		this.stores.userInput = new ModalStore(true)
+		this.stores.colorPicker = new ModalStore()
+		this.stores.user = new UserStore()
 	}
 }
 
