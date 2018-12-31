@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 import moment from 'moment'
+import styled from 'styled-components'
 
 const ClockStyle = styled.h1`
     font-family: 'Digital-7';
@@ -13,7 +13,8 @@ const Container = styled.div`
     justify-content: center;
 `
 
-const newYear = new Date('2019-01-01T00:00:00Z')
+const newYear = new Date(2019, 1, 1)
+newYear.setTime(newYear.getTime() + newYear.getTimezoneOffset() * 60 *1000)
 export default class Clock extends React.PureComponent {
     state = {
         date: newYear - Date.now()
@@ -29,7 +30,7 @@ export default class Clock extends React.PureComponent {
 
     tick() {
         this.setState({
-            date: newYear - Date.now()
+            date: newYear - Date.now() - new Date().getTimezoneOffset()
         })
     }
 
