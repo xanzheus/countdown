@@ -19,6 +19,7 @@ export const Container = styled(({ isUser, ...rest }) => <div {...rest} />)`
 	display: flex;
 	flex-direction: ${({ isUser }) => isUser ? 'row-reverse' : 'reverse'};
 	margin: 16px 8px;
+	width: 100%;
 	${({ isUser }) => isUser && css`justify-content: end;`};
 `
 
