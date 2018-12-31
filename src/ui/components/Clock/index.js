@@ -13,7 +13,7 @@ const Container = styled.div`
     justify-content: center;
 `
 
-const newYear = new Date('2019-01-01T00:00:00')
+const newYear = new Date('2019-01-01T00:00:00Z')
 export default class Clock extends React.PureComponent {
     state = {
         date: newYear - Date.now()
