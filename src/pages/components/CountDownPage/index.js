@@ -1,5 +1,9 @@
-import { Container } from 'ui'
-import Clock from '../Clock'
+import Clock, {
+	Button,
+	Card,
+	Container,
+	Input
+} from 'ui'
 import { ChatArea } from 'chat'
 
 import { Provider } from 'mobx-react'
