@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/countdown-2019/precache-manifest.a2e6846df4b5dfae8988e6c624e7d679.js"
+  "/countdown-2019/precache-manifest.39f7708b72946bfcf29495e402bf09a2.js"
 );
 
 workbox.clientsClaim();
