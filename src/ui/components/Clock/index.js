@@ -13,11 +13,9 @@ const Container = styled.div`
     justify-content: center;
 `
 
-const newYear = new Date(2019, 1, 1)
-newYear.setTime(newYear.getTime() + newYear.getTimezoneOffset() * 60 *1000)
 export default class Clock extends React.PureComponent {
     state = {
-        date: newYear - Date.now()
+        date: this.getDuration()
     }
 
     componentDidMount() {
@@ -26,21 +24,29 @@ export default class Clock extends React.PureComponent {
 
     componentWillUnmount() {
         clearInterval(this.timerID)
-    }
+	}
+	
+	getDuration() {
+		const startTime = moment()
+		const end = moment('01/01/2019, 00:00:00')
+		return moment.duration(end.diff(startTime))
+	}
 
     tick() {
         this.setState({
-            date: newYear - Date.now() - new Date().getTimezoneOffset()
+            date: this.getDuration()
         })
     }
 
     render() {
-        return (<Container>
-            <ClockStyle>
-                {
-                    this.state.date > 0 ? moment(this.state.date).format('h:mm:ss') : 'Happy new year!'
-                }
-            </ClockStyle>
-        </Container>)
+        return (
+			<Container>
+				<ClockStyle>
+					{
+						this.state.date.asMilliseconds() > 0 ? moment.utc(this.state.date.asMilliseconds()).format('HH:mm:ss') : 'Happy new year!'
+					}
+				</ClockStyle>
+			</Container>
+		)
     }
 }
