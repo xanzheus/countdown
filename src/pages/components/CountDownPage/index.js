@@ -1,11 +1,8 @@
 import Clock, {
-	Button,
-	Card,
 	Container,
-	Input
 } from 'ui'
-import { ChatArea } from 'chat'
 
+import { ChatArea } from 'chat'
 import { Provider } from 'mobx-react'
 import React from 'react'
 import { UserInputModal } from 'user'
