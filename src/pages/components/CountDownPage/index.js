@@ -1,4 +1,5 @@
 import { Button, Card, Container, Input } from 'ui'
+import Clock from '../Clock'
 
 import { Provider } from 'mobx-react'
 import React from 'react'
@@ -9,7 +10,7 @@ export const CountDownPage = () => (
 	<Provider {...store.stores}>
 		<Container>
 			<UserInputModal />
-			<div>Init</div>
+			<Clock />
 			<Card>
 				<h1>hhhh</h1>
 				<Input placeholder="AAA" />
