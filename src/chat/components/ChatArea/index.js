@@ -1,10 +1,11 @@
 import { Button, Card, Input, Row } from 'ui'
+import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
-import { addData } from 'firebase-mgmt'
 
 import { Area } from './styled'
-import React, { Component } from 'react'
+import { ChatBox } from 'chat'
 import { compose } from 'recompose'
+import { firestore } from 'firebase-mgmt'
 
 export const ChatArea = compose(
 	inject(({ user, userInput }) => ({
@@ -25,9 +26,13 @@ export const ChatArea = compose(
 		onEnter = ({ keyCode }) => {
 			if (keyCode === 13) {
 				const { msg } = this.state
-				addData('msg', {
+				const { user } = this.props
+				firestore.collection('msg').add({
 					msg,
+					user: user.getInfo(),
+					date: new Date().getTime()
 				})
+				this.setState({ msg: '' })
 			}
 		}
 
@@ -38,6 +43,9 @@ export const ChatArea = compose(
 				<Card>
 					{isInit ? (
 						<Area>
+							<Row>
+								<ChatBox />
+							</Row>
 							<Row>
 								<Input
 									placeholder="Say something fun... and enter!"

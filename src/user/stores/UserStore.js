@@ -12,6 +12,17 @@ class Store {
 		this.pic = pic
 		this.isInit = true
 	}
+
+	isUser(user) {
+		return this.name === user.name && this.pic === user.pic && this.color === user.color
+	}
+
+	getInfo() {
+		const { name, color, pic } = this
+		return {
+			name, color, pic,			
+		}
+	}
 }
 
 export const UserStore = decorate(Store, {
