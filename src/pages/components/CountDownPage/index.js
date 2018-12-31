@@ -1,5 +1,7 @@
 import { Button, Card, Container, Input } from 'ui'
 import Clock from '../Clock'
+import { ChatArea } from 'chat'
+import { Container } from 'ui'
 
 import { Provider } from 'mobx-react'
 import React from 'react'
@@ -16,6 +18,7 @@ export const CountDownPage = () => (
 				<Input placeholder="AAA" />
 				<Button>saddsadsa</Button>
 			</Card>
+			<ChatArea />
 		</Container>
 	</Provider>
 )

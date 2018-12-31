@@ -1,9 +1,9 @@
-import { Button, Input } from 'ui'
-import { Half, InputContainer, Row } from './styled'
+import { Button, Half, Input, Row } from 'ui'
 import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
 
 import { ColorPicker } from 'color-pick'
+import { InputContainer } from './styled'
 import { Modal } from 'modal'
 import { compose } from 'recompose'
 
