@@ -5,6 +5,7 @@
   "dependencies": {
     "mobx": "^5.8.0",
     "mobx-react": "^5.4.3",
+    "moment": "^2.23.0",
     "react": "^16.7.0",
     "react-color": "^2.17.0",
     "react-dom": "^16.7.0",
